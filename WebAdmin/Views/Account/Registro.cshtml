@@ -1,0 +1,213 @@
+﻿@model WebAdmin.Models.RegistroView
+
+  @{
+    ViewData["Title"] = "Registro";
+    Layout = "_LayoutInicial";
+}
+
+<div class="pageStyles">
+    <div class="fullpage">
+     <div class="page-container">
+
+            <div class="container justify-content-center">
+                <div class="page-card cardSignup">
+                    <div class="cardTitle"><h2>Registro</h2></div>
+                    <div class="row justify-content-center">
+                       
+                   <div class="col-sm-6">
+                       <div class="cardInfoArea">
+                          <div class="cardInfoArea-14 estilo-primary-01">
+                                <span class="fa fa-industry fa-3x"></span>
+                          
+                           </div>
+                     
+                            <div class="cardInfo"> 
+                                <div class="cardInfoTitle">Marketing</div>
+                               <div class="cardInfo-description">We've created the marketing campaign of the website. It was a very interesting collaboration.</div> 
+                                              
+                            </div> 
+                       </div>
+                       <div class="cardInfoArea">
+                          <div class="cardInfoArea-14 estilo-primary-02">
+                                <span class="fa fa-code fa-3x"></span>
+                          
+                           </div>
+                     
+                            <div class="cardInfo"> 
+                                <div class="cardInfoTitle">Fully Coded in HTML5</div>
+                               <div class="cardInfo-description">We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.</div> 
+                                              
+                            </div> 
+                       </div>
+                       <div class="cardInfoArea">
+                          <div class="cardInfoArea-14 estilo-primary-03">
+                                <span class="fa fa-industry fa-3x"></span>
+                          
+                           </div>
+                     
+                            <div class="cardInfo"> 
+                                <div class="cardInfoTitle">Built Audience</div>
+                               <div class="cardInfo-description">There is also a Fully Customizable CMS Admin Dashboard for this product.</div> 
+                                              
+                            </div> 
+                       </div>
+                    </div>
+                    <div class="col-sm-6">
+                       <form class="formRegister" asp-action="Registro" method="post" enctype="multipart/form-data">
+                            @Html.ValidationMessage("CustomError")
+                         <div class="row">
+                            <div class="col-md-5">
+                                <div class="input-group mb-3">
+                            <input asp-for="CNPJ" data-inputmask="'mask': ['99.999.999/9999-99']" data-mask type="text" class="form-control" placeholder="@Html.DisplayNameFor(n => n.CNPJ)">
+                           
+                        </div>
+                        <span asp-validation-for="CNPJ" class="text-danger"></span>
+                          </div>
+                          <div class="col-md-7">
+                        <div class="input-group mb-3">
+                           <input asp-for="Nome" type="text" class="form-control" placeholder="@Html.DisplayNameFor(n => n.Nome)">
+                            
+
+                        </div>
+                          </div>
+                          <div class="col-md-12">
+                          <div class="input-group mb-3">
+                           <input asp-for="Email" type="text" class="form-control" placeholder="@Html.DisplayNameFor(n => n.Email)">
+                         
+                        </div>
+                        </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="Fone" type="text" class="form-control" placeholder="@Html.DisplayNameFor(n => n.Fone)">
+
+                                            <span asp-validation-for="Fone" class="text-danger"></span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="Celular" type="text" class="form-control" placeholder="@Html.DisplayNameFor(n => n.Celular)">
+
+                                           
+                                        </div>
+                                         <span asp-validation-for="Celular" class="text-danger"></span>
+                                    </div>
+                        <div class="col-md-9">
+                             <div class="input-group mb-3">
+                            <input asp-for="Endereco" type="text" class="form-control" placeholder="@Html.DisplayNameFor(n => n.Endereco)">
+                           
+                           
+                        </div>
+                         <span asp-validation-for="Endereco" class="text-danger"></span>
+                          </div>
+                          <div class="col-md-3">
+                        <div class="input-group mb-3">
+                           <input asp-for="Numero" type="text" class="form-control" placeholder="@Html.DisplayNameFor(n => n.Numero)">
+                    
+                        </div>
+                          </div>
+                        <div class="col-md-6">
+                          <div class="input-group mb-3">
+                            <select id="Estado" asp-for="EstadoId" class="form-select" asp-items="ViewBag.estadoId" style="width: 100%;">
+                            <option>Selecione o Estado</option>
+                         </select>
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-group mb-3">
+                            <select id="Cidade" asp-for="CidadeId" class="form-select" style="width: 100%;">
+                            <option>Selecione a Cidade</option>
+                         </select>
+                         
+                        </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="input-group mb-3">
+                           <input asp-for="Imagens" type="file" class="form-control" placeholder="@Html.DisplayNameFor(n => n.Imagens)">
+                         
+                        </div>
+                        </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="Password" type="password" class="form-control" placeholder="@Html.DisplayNameFor(n => n.Password)">
+
+                                            
+                                        </div>
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="@Html.DisplayNameFor(n => n.ConfirmPassword)">
+                                            
+                                        </div>
+                                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                    </div>
+                                     <div class="col-md-12">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                                        <label for="agreeTerms" class=" fontTermo">
+                                            você concorda com os <a href="#">Termos de Uso</a>
+                                        </label>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                      <div class="content">
+                                         <button type="submit" class="button"><span class="button_text">Registrar-se</span>
+		                                              </button>
+                                      </div>
+                                      <!-- <button type="submit" class="btn btn-primary btn-block btnRegis">Registrar <div class="loader"></div> </button>-->
+                                      
+                                        </div>
+
+                                    <div class="col-md-12 text-center">
+                                        <a class="t">Já tem cadastro?</a>
+                                    </div>
+                        </div>
+                         
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+ 
+    </div>
+    
+ 
+    </div>
+    </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/jscript">
+
+        $('#Estado').change(function () {
+            var select = document.getElementById('Estado');
+            var uf = select.options[select.selectedIndex].value;
+
+            $.getJSON('@Url.Action("getCidades","Account")', {'uf':uf}, function (data) {
+                var items = '<option>Selecione a Cidade</option>';
+             
+                $.each(data[0], function (i, district) {
+                   
+                    items += "<option value='" + district.id + "'>" + district.nome + "</option>";
+                });
+
+                $('#Cidade').html(items);
+            });
+
+        });
+        
+        const button = document.getElementById('registro');
+
+        /*
+button.addEventListener("click",=> {
+    button.classList.add("button--loader");
+}*/
+
+
+
+    </script>
+}

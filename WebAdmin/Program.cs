@@ -1,9 +1,12 @@
+using WebAdmin.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<ILocalidadeService,LocalidadeService>();
 builder.Services.AddHttpClient("ServerClient", c=>
 {
     c.BaseAddress = new Uri(builder.Configuration["ServiceUri:ServerClient"]);

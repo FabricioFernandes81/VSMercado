@@ -14,5 +14,132 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+ 
+}
+.pageStyles{
+    top:0;
+    height:auto;
+    position:relative;
+    min-height:100vh;
+}
+.fullpage
+{
+    border:0;
+    height: 100%;
+    margin:0;
+   /* display:flex!important;*/
+    padding:120px 0;
+    position:relative;
+    min-height: 100vh;
+    align-items:center;
+    background-size:cover;
+    background-position:center center;
+    background-image:url("../images/abstract-blur-supermarket-and-retail-store.jpg");
+}
+.page-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.page-card
+{
+   width:100%;
+   background:#FFF;
+   height:100%;
+
+}
+.cardSignup{
+    padding: 40px 10px ;
+    margin-top:10px;
+    border-radius:12px;
+}
+.cardTitle {
+    color: #3C4858;
+    margin-top: 0;
+    min-height: 0;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 3px;
+    text-decoration: none;
+    font-family: 'Cairo', sans-serif;
+}
+
+.cardInfoArea {
+    display: flex;
+    max-width: 360px;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+.cardInfoArea.cardInfo 
+{
+        margin-top:24px;
+}
+.cardInfoArea-14 {
+    float: left;
+    margin-right: 10px;
+}
+.estilo-primary-01 {
+    color: red;
+}
+.estilo-primary-02 {
+    color: #9c27b0;
+}
+.estilo-primary-03 {
+    color: #00acc1;
+}
+.cardInfoArea cardInfoTitle {
+    color: #3C4858;
+    font-size 18px;
+    text-decoration:none;
+}
+.cardInfoArea .cardInfo-description {
+    color: #999;
+    overflow: hidden;
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.button--loader::after {
+    margin-left: 20px;
+    border: 2px solid #f3f3f3; /* Light grey */
+    border-top: 2px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    animation: spin 2s linear infinite;
+}
+    
+.formRegister .content {
+    position:relative;
+ 
+}
+.formRegister .button {
+  
+    height: 50px;
+    padding-left: 10px;
+    background: #009578;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width:200px;
+}
+.button_text
+.button_icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    color: #fff;
+    height: 100%;
 }
